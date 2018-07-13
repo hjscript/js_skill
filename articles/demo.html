@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>demo</title>
 </head>
-<body>
-	
+<body>	
 </body>
 <script>
 // //1 
@@ -86,6 +85,7 @@
 // toThousands(123456)
 
 //JS查找字符串中出现次数最多的字符
+//1用charAt
 // function mostCharInStr(paramStr) {
 // 	var str = paramStr,
 // 		len=str.length,
@@ -110,7 +110,22 @@
 // 	}
 // 	return [s,max];
 // }
-
 // mostCharInStr(paramStr)
-</script>
+
+//2 用indexOf
+// function mostCharInStr(paramStr) {
+// 	var str=paramStr,
+// 		len=str.length-1,
+// 		arr=[],
+// 		cur='',
+// 		max=0,
+// 		index=0;
+// 		while(len>0){
+// 			index=str.indexOf(str[len],index+1);
+// 			len--;
+// 		}
+// }
+// mostCharInStr('31232131323423434');
+	</script>
+</body>
 </html>
