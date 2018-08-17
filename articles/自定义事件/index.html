@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>	
+<div class="dom"></div>
+	<script>
+	var oDiv=document.getElementsByClassName('dom');
+	function show(){
+		alert('嘻嘻哈哈大大闹闹');
+	}	
+	function delegate(){
+		alert('特别的躁');
+	}	
+	function show1(){
+		alert('夜里不睡觉放弃治疗上蹿下跳');
+	}	
+	// 自定义事件(图书馆例子)   
+	function on(ele,type,fn){
+		if(!ele[type]){
+			ele[type]=[];
+		}
+		ele[type].push(fn);
+	}
+	function off(ele,type,fn){
+		var eles=ele[type];
+		for (var i = 0; i < eles.length; i++) {
+			if(eles[i]==fn){
+				eles.splice(i,1);
+			}
+		}
+	}
+	function run(ele,type,fn){
+		var eles=ele[type];
+		for (var i = 0; i < eles.length; i++) {
+			eles[i]()
+		}
+	}
+
+	on(oDiv,'show',show);
+	on(oDiv,'show',show1);
+	on(oDiv,'show',delegate);
+	run(oDiv,'show',delegate);
+	off(oDiv,'show',delegate);
+	run(oDiv,'show',delegate);
+	</script>
+</body>
+</html>
