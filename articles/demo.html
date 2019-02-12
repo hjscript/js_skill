@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<body>	
+</body>
+<script>
+// //1 
+// function toThousands(num){
+// 	var str=num.toString();
+// 	//写for循环习惯一把长度保存下来这样不用每次去获取(数组去重除外)
+// 	var len=str.length;
+// 	var res=[];
+// 	var i=len;
+// 	str=str.split("").join('');
+// 	while(i>=3){ //必要条件
+// 		res.unshift(str.slice(i-3,i));
+// 		i-=3;
+// 	}
+// 	if(!(i%3==0)&&i!=0){
+// 		console.log(i)
+// 		res.unshift(str.slice(0,i));
+// 	}
+// 	return res.join(',');
+// }
+// toThousands(1234567890)
+
+//2
+// function toThousands(num){
+// 	var str=num.toString().split('');
+// 	//写for循环习惯一把长度保存下来这样不用每次去获取(数组去重除外)
+// 	var len=str.length;
+// 	var res=[],count=0;
+// 	for(var i=len;i>0;i--){
+// 		res.unshift(str.pop());  
+// 		count++;
+// 		console.log(count,len);
+// 		if(count%3==0&&count!=len){
+// 			res.unshift(',');
+// 		}
+// 	}
+// 	console.log(res.join(''))
+// 	return res.join('');
+// }
+// toThousands(1234567); toThousands(123456);
+
+//3
+// function toThousands(num){
+// 	var str=num.toString().split('');
+// 	//写for循环习惯一把长度保存下来这样不用每次去获取(数组去重除外)
+// 	var len=str.length;
+// 	var res=[],count=0;
+// 	for(var i=len;i>0;i--){
+// 		res.unshift(str.pop());  
+// 		count++;
+// 		console.log(count,len);
+// 		if(!(count%3==0)&&count!=len){
+// 			res.unshift(',');
+// 		}
+// 	}
+// 	console.log(res.join(''))
+// 	return res.join('');
+// }
+
+//4
+// function toThousands(num){
+// 	var str=num.toString();
+//  	//写for循环习惯一把长度保存下来这样不用每次去获取(数组去重除外)
+//  	var len=str.length;
+//  	var res="",count=0;
+//  	for (var i=len-1;i>=0;i--) {
+//  		count++;
+//  		res=str.charAt(i)+res;
+//  		console.log(len,i);
+//  		if(!(count%3)&&i!=0){
+//  			res=','+res;
+//  		}
+//  	}
+//  	console.log(res);
+//  	return res;
+// }
+
+// toThousands(123456)
+
+//JS查找字符串中出现次数最多的字符
+//1用charAt
+// function mostCharInStr(paramStr) {
+// 	var str = paramStr,
+// 		len=str.length,
+// 		obj={},
+// 		cur='',
+// 		max=0,
+// 		s='';
+// 	for (var i = 0; i < len; i++) {
+// 		 cur=str.charAt(i);
+// 		if(!obj[cur]){  //这里不能是0而是1坑
+// 			obj[cur]=1;
+// 		}
+// 		else{
+// 			obj[cur]+=1;
+// 		}
+// 	}
+// 	for(var key in obj){
+// 		if(obj[key]>max){
+// 			max=obj[key]
+// 			s=key;
+// 		}
+// 	}
+// 	return [s,max];
+// }
+// mostCharInStr(paramStr)
+
+//2 用indexOf
+// function mostCharInStr(paramStr) {
+// 	var str=paramStr,
+// 		len=str.length-1,
+// 		arr=[],
+// 		cur='',
+// 		max=0,
+// 		index=0;
+// 		while(len>0){
+// 			index=str.indexOf(str[len],index+1);
+// 			len--;
+// 		}
+// }
+// mostCharInStr('31232131323423434');
+	</script>
+</body>
+</html>

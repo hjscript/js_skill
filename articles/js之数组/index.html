@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		//数组去重多种方法
+//1 indexOf方式
+// var arr = [12, 1, 2, 3, 3, 2, 5, 6, 7, 7, 99, 10, 10];
+// var res = [];
+// for (var i = 0; i < arr.length; i++) {
+//     if (res.indexOf(arr[i]) === -1) {
+//         res.push(arr[i]);
+//     }
+// }
+// console.log(res);
+
+//2 对象过滤方式
+// var arr = [12, 1, 2, 3, 3, 2, 5, 6, 7, 7, 99, 10, 10];
+// var obj = {};
+// var res = [];
+// for (var i = 0; i < arr.length; i++) {
+//     var cur = arr[i];
+//     if (!obj[cur]) {
+//         obj[cur] = 1;
+//     } else {
+//        arr.splice(i,1);
+//        i++；
+//     }
+// }
+// console.log(res);
+
+//3 双重循环方式
+// var arr = [12, 1, 2, 3, 3, 2, 5, 6, 7, 7, 99, 10, 10];
+// for (var i = 0; i < ary.length; i++) {
+//     for (var j = i + 1; j < arr.length; j++) {
+//         if (arr[i] === arr[j]) {
+//             ary.splice(i, 1);
+//             i--;
+//         }
+//     }
+// }
+// console.log(arr);
+
+//4  true false值方式
+// var arr = [12, 1, 2, 3, 3, 2, 5, 6, 7, 7, 99, 10, 10];
+// var res = [];
+// for (var i = 0; i < arr.length; i++) {
+//     var flag = false;
+//     for (var j = i + 1; j < arr.length; j++) {
+//         if (arr[i] === arr[j]) {
+//             flag = true;
+//             break;
+//         }
+//     }
+//     if(!flag){
+//         res.push(arr[i]);
+//     }
+// }
+// console.log(res);
+
+//5 排序后相邻去除法
+// var arr = [12, 1, 2, 3, 3, 2, 5, 6, 7, 7, 99, 10, 10];
+// arr.sort(function (a,b) {
+//     return a-b;
+// });
+// var res = [];
+// var temp=[arr[0]];
+// for (var i = 1; i < arr.length; i++) {
+//     // debugger;
+//     if(arr[i]!=arr[i+1]){
+//         temp.push(arr[i]);
+//     }
+// }
+// console.log(temp);
+
+// function uniq(array) {
+//     array.sort();
+//     var temp = [array[0]];
+//     for (var i = 0; i < array.length; i++) {
+//         if (array[i] !== temp[temp.length - 1]) {
+//             temp.push(array[i]);
+//         }
+//     }
+//     return temp;
+// }
+
+// var aa = [1, 2, 2, 4, 9, "a", "a", 2, 3, 5, 6, 5];
+// console.log(uniq(aa));
+
+//6 实现reverse方法
+var arr = [3, 2, 4, 1, 5]
+for (var i = 0; i < arr.length; i++) {
+    for (var j = i + 1; j < arr.length; j++) {
+        var temp = null;
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+console.log(arr);
+	</script>
+</body>
+</html>
