@@ -82,12 +82,6 @@ function extend() {
   return target;
 };
 
-var obj1 = { a:'extend', b: 13};
-var obj2 = { a: {a: "深拷贝", b: 12} };
-console.log(extend(false, obj1, obj2))
-console.log(extend(true, obj1, obj2))
-console.log(extend(obj1))
-
 ```
 
 
