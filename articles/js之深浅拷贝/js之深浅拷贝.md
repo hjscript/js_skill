@@ -4,18 +4,18 @@
 
 look代码吧。
 
-```js 简单方式的深拷贝
+```js 
+// 简单方式的深拷贝
 function deepCopy(oldObj, newObj){
-  var copyObj = newObj || {} //要存储的对象
+  var copyObj = newObj || []
   for (var key in oldObj) { // 遍历要赋值的原对象的key值
     // 判断是否是对象
-    if(oldObj && typeof oldObj[key] === "object" ){
+    if(oldObj.hasOwnProperty(key) ){
       // 判断是否有属性值
-      if(oldObj.hasOwnProperty(key)){
-        // 判断属性值是否是引用对象 
-        copyObj[key] = Object.prototype.toString.call(oldObj[key]) ===  "[object Array]" ? [] : {} 
+      if(oldObj && typeof oldObj[key] === "object"){
         // 递归循环
-        copyObj = deepCopy(copyObj[key], oldObj[key])
+        copyObj[key] = (oldObj[key].constructor === Array) ? [] : {};      
+        copyObj[key] = deepCopy(oldObj[key],copyObj[key])
       }else{ 
         // 如果是基本类型直接赋值
         copyObj[key] = oldObj[key]
@@ -27,7 +27,8 @@ function deepCopy(oldObj, newObj){
 };
 ```
 
-```js 实现类似jQuery.extend的方法 
+```js 
+// 实现类似jQuery.extend的方法 
 function extend() {
   var target = arguments[0] || {},
       i = 1,
