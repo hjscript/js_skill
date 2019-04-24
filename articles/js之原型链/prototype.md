@@ -125,8 +125,11 @@ look代码吧。
     	new new Foo().getName();   
 	```
 
+<<<<<<< HEAD
   ```
   https://zhuanlan.zhihu.com/p/22989691  参考文档
   ```
 
+=======
+>>>>>>> 033d32a9cb9d9cb2393dfff33b805286799dac53
 

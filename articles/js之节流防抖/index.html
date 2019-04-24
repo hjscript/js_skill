@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>节流防抖</title>
+</head>
+
+<body>
+</body>
+<script>
+// 防抖：
+
+// 理解：在车站上车，人员上满了车才发走重点是人员上满触发一次
+
+// 场景：实时搜索，拖拽。
+
+// 实现：
+/**
+ * 防抖：
+ * @param {function} fn 执行函数
+ * @param {date} delay 延迟时间
+*/
+function debunce(fn, delay) {
+  var timer = null
+  return  function(){
+    var _self = this, args = arguments
+    clearTimeout(timer)
+    timer=setTimeout(function(){
+      fn.apply(_self, args)
+    },delay)
+  }
+}
+
+
+//  节流：
+
+//  理解：大于等于10分钟发一次车，重点是一定间隔时间就会触发一次
+
+// （即预定一个函数只有在大于等于执行周期时才会执行，周期内不执行）
+
+//  场景：窗口调整（调整大小），页面滚动（滚动），抢购时疯狂点击（鼠标按下）
+
+//  实现：
+/**
+ * 防抖：
+ * @param {function} fn 执行函数
+ * @param {date} wait 间隔时间
+*/
+function throttle(fn, wait){
+  var startDate = new Date()
+  return function (){
+    var nowTime = new Date().getTime(); 
+    if(nowTime - startDate > wait){
+      fn()
+      startDate = nowTime 
+    }
+  }
+}
+
+
+// 借鉴https://blog.csdn.net/orchid_djl/article/details/79924898
+</script>
+</body>
+
+</html>
