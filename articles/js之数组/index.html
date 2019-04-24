@@ -91,16 +91,34 @@
 // console.log(uniq(aa));
 
 //6 实现reverse方法
-var arr = [3, 2, 4, 1, 5]
+// var arr = ["",3, 2, 4, 3, 4,""]
+// for (var i = 0; i < arr.length; i++) {
+//     for (var j = i + 1; j < arr.length; j++) {
+//         var temp = null;
+//         temp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = temp;
+//     }
+// }
+// console.log(arr);
+
+
+
+
+var arr = ["",3, 4,"", 2, 4]
+var t=""
+var flag = false 
 for (var i = 0; i < arr.length; i++) {
     for (var j = i + 1; j < arr.length; j++) {
-        var temp = null;
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        if(arr[i]==arr[j]&&arr[i]&&arr[j]){
+            // console.log(arr[i],arr[j])
+            flag = true
+
+        }
     }
 }
-console.log(arr);
+t=flag
+console.log(t)
 	</script>
 </body>
 </html>

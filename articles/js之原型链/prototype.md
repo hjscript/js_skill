@@ -125,4 +125,8 @@ look代码吧。
     	new new Foo().getName();   
 	```
 
+  ```
+  https://zhuanlan.zhihu.com/p/22989691  参考文档
+  ```
+
 

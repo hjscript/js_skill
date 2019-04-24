@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
 
-	<script type="text/javascript">
-				// function Parent() {
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    // function Parent() {
     //         this.a = 1;
     //         this.b = [1, 2, this.a];
     //         this.c = { demo: 5 };
@@ -30,7 +31,7 @@
     //     child1.a = 11;
     //     child2.a = 12;
     //     parent.show();
-    //  	 child1.show();  
+    //     child1.show();  
     //     child2.show();   
     //     child1.change();
     //     child2.change();
@@ -39,111 +40,136 @@
     //     child2.show();  // this.a , this.b , this.c.demo  =>
 
 
-						// var F=function(){};
+    // var F=function(){};
 
-						// Object.prototype.a=function(){
+    // Object.prototype.a=function(){
 
-						// console.log('a()')
+    // console.log('a()')
 
-						// };
+    // };
 
-						// Function.prototype.b=function(){
+    // Function.prototype.b=function(){
 
-						// console.log('b()')
+    // console.log('b()')
 
-						// }
+    // }
 
-						// var f=new F();
+    // var f=new F();
 
-						// f.a()   
-						// f.b()   
-						// F.a()            
-						// F.b()   
-
-
-						// function Base(name){
-      //           this.sex = 0;
-      //           this.name = name || 'base';
-      //           this.hello = function(){
-      //               console.log("hello " + name);
-      //           };
-      //       }
-      //       Base.prototype.say = function(){
-      //           console.log('name:'+this.name);
-      //       };
-      //       function Extend(name,num){
-      //           Base.call(this,name);
-      //           this.num = num || 0;
-      //       }
-      //       Extend.prototype = new Base();
-      //       Extend.prototype.constructor = Extend;
-
-      //       var one = new Extend('one',2);
-      //       one.sex=12;
-      //       console.log(Extend.__proto__);  
-      //       console.log(one instanceof Extend);  
-      //       console.log(one instanceof Base);   
-      //       console.log(one.constructor === Extend);  
-      //       console.log(one.__proto__ === Extend.prototype);  
-            
-      //       console.log(one.name);  
-      //       console.log(one.sex);  
-      //       console.log(one.num); 
-      //       console.log(one);  
-      //       one.say();  
-      //       one.hello();
+    // f.a()   
+    // f.b()   
+    // F.a()            
+    // F.b()   
 
 
+    // function Base(name){
+    //           this.sex = 0;
+    //           this.name = name || 'base';
+    //           this.hello = function(){
+    //               console.log("hello " + name);
+    //           };
+    //       }
+    //       Base.prototype.say = function(){
+    //           console.log('name:'+this.name);
+    //       };
+    //       function Extend(name,num){
+    //           Base.call(this,name);
+    //           this.num = num || 0;
+    //       }
+    //       Extend.prototype = new Base();
+    //       Extend.prototype.constructor = Extend;
 
+    //       var one = new Extend('one',2);
+    //       one.sex=12;
+    //       console.log(Extend.__proto__);  
+    //       console.log(one instanceof Extend);  
+    //       console.log(one instanceof Base);   
+    //       console.log(one.constructor === Extend);  
+    //       console.log(one.__proto__ === Extend.prototype);  
 
-        //     var obj = {}; obj.a = 100;
-				    // var arr = []; arr.a = 100;
-				    // function fn(){}
-				    // fn.a = 100;  
-
-				    // console.log(obj.__proto__===Object.prototype) 
-				    // console.log(arr.__proto__===Array.prototype) 
-				    // console.log(fn.__proto__===Function.prototype)  
-
-				    // console.log(fn.prototype) 
-
-				    // console.log(obj.__proto__ === Object.prototype) 
+    //       console.log(one.name);  
+    //       console.log(one.sex);  
+    //       console.log(one.num); 
+    //       console.log(one);  
+    //       one.say();  
+    //       one.hello();
 
 
 
 
-			  // 	function Foo(){
+    //     var obj = {}; obj.a = 100;
+    // var arr = []; arr.a = 100;
+    // function fn(){}
+    // fn.a = 100;  
 
-					// 	getName=function(){alert(1)};
+    // console.log(obj.__proto__===Object.prototype) 
+    // console.log(arr.__proto__===Array.prototype) 
+    // console.log(fn.__proto__===Function.prototype)  
 
-					// 	return this;
+    // console.log(fn.prototype) 
 
-					// }
+    // console.log(obj.__proto__ === Object.prototype) 
 
-					// Foo.getName=function(){alert(2)};
 
-					// Foo.prototype.getName=function(){alert(3)};
 
-					// var getName=function(){ alert(4)};
 
-					// function getName(){alert(5)};
+    //  function Foo(){
 
-					// //请写出一下输出结果
+    //  getName=function(){alert(1)};
 
-					// Foo.getName();   
+    //  return this;
 
-					// getName();   
+    // }
 
-					// Foo().getName();  
+    // Foo.getName=function(){alert(2)};
 
-					// getName();  
+    // Foo.prototype.getName=function(){alert(3)};
 
-					// new Foo.getName();  
+    // var getName=function(){ alert(4)};
 
-					// new new Foo().getName();   
+    // function getName(){alert(5)};
 
-					
+    // //请写出一下输出结果
 
-	</script>
+    // Foo.getName();   
+
+    // getName();   
+
+    // Foo().getName();  
+
+    // getName();  
+
+    // new Foo.getName();  
+
+    // new new Foo().getName();   
+
+    // var obj = new Object();
+    // obj.a = 100;
+
+    // function Fn() {}  
+    // Fn.a = 100;
+
+    // console.log(Object.isPrototypeOf(obj)); //隐式原型，都具有可扩展属性原则
+    // console.log(Fn.prototype); //显示原型
+    function A() {}
+
+    function B() {}
+
+    function C() {}
+
+    B.prototype = new A()
+    C.prototype = new B()
+
+    const c = new C()
+
+    console.log(
+        c.__proto__ === C.prototype,
+        C.prototype.__proto__ === B.prototype,
+        B.prototype.__proto__ === A.prototype,
+        A.prototype.__proto__ === Object.prototype,
+        Object.prototype.__proto__ === null
+    )
+    </script>
 </body>
+
 </html>
