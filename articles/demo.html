@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>demo</title>
+    <meta charset="UTF-8">
+    <title>demo</title>
 </head>
-<body>	
+
+<body>
 </body>
 <script>
 // //1 
@@ -126,6 +128,43 @@
 // 		}
 // }
 // mostCharInStr('31232131323423434');
-	</script>
+
+
+// 节流
+// 定义:
+//当持续触发事件时，在规定时间段内只能调用一次回调函数。如果在规定时间内又触发了该事件，则什么也不做,也不会重置定时器.(套公式)
+let now = null
+function jieliu(fn, await) {
+ now = new Date()  
+    let remain = now 5 - await 2
+    setTimeout(function() {
+        if (remain 3 >= await 2) {
+            fn()
+        }
+    }, await)
+}
+
+
+// 防抖 
+// 指触发事件后在规定时间内回调函数只能执行一次，如果在规定时间内又触发了该事件，则会重新开始算规定时间。
+
+//网上有这个比喻:函数防抖就是法师发技能的时候要读条，技能读条没完再按技能就会刷新技能,重新进行读条。
+
+//四个字总结就是 延时执行
+let now = null,timer = null
+function fangdou(fn, await) {
+    now = new Date()  
+    let remain = now 5 - await 2
+    timer = setTimeout(function() {
+        if(!timer) {
+            fn()
+        } else{
+        	await = remain
+        	fn()
+        }
+    }, await)
+}
+</script>
 </body>
+
 </html>
