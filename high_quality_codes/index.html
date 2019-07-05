@@ -3,26 +3,142 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="require.js" type="text/javascript"></script>
     <title>demo</title>
 </head>
 
 <body>
 </body>
 <script>
+// function f1(a, fn) {
+//     fn(a)
+// }
+// var n = 10;
+// var myFun = function(a) {
+//     console.log(a)
+// }
 
-function f1(a, fn) {
-    fn(a)
-}
-var n = 10;
-var myFun = function(a) {
-    console.log(a)
-}
+// f1(n, myFun)
+// // 等价于
+// // f1(n, function(a) {
+// //   console.log(a)
+// // })
+// 
+// var obj = {
+//     a: 12,
+//     b: 123
+// }
+// Function.prototype.myapply = function (context, arr) {
+//     var context = Object(context) || window;
+//     context.fn = this;
+//     console.log(arr)
+//     var result;
+//     if (!arr) {
+//         result = context.fn();
+//     }
+//     else {
+//         var args = [];
+//         for (var i = 0, len = arr.length; i < len; i++) {
+//             args.push('arr[' + i + ']');
+//         }
+//         result = eval('context.fn(' + args + ')')
+//     }
 
-f1(n, myFun)
-// 等价于
-// f1(n, function(a) {
-// 	console.log(a)
-// })
+//     delete context.fn
+//     return result;
+// }
+// // Function.prototype.myapply = function(context) {
+// //   context = context || window;
+// //   context.fn = this;
+// //   let result;
+// //   if (arguments[1]) {
+// //     result = context.fn(...arguments[1]);
+// //   } else {
+// //     result = context.fn();
+// //   }
+// //   delete context.fn;
+// //   return result;
+// // }
+
+// // function fn(name, sex) {
+// //   this.name = name;
+// //   this.sex  = sex;
+// //   console.log(this.name);
+// //   console.log(this.sex);
+// // }
+// function bind(obj, fn) {
+//  // console.log(arguments)
+//     return function() {
+//      // console.log(arguments)
+//         return fn.myapply(obj, arguments);
+//     };
+// }
+
+// function make(a,b) {
+//  // console.log(arguments[0])
+//  // console.log(arguments[1])
+//     // console.log(this.fn === make)
+// }
+
+// var _bind = bind(obj, make)
+// console.log(_bind())
+
+// function A(){
+
+// }
+// var _a = new A()
+
+// function b(){
+//   return safeThen()
+// }
+
+// function safeThen(arg,arg2) {
+//   return new _a.constructor(function(resolve, reject) {
+//     console.log(resolve,reject)
+//     console.log(arg)
+//     console.log(arg2)
+//   });
+// }
+
+// var a = safeThen(1,2)
+// console.log(a)
+// console.log()
+// function noop() {}
+
+// function Promise(fn) {
+//     if (typeof this !== 'object') {
+//         throw new TypeError('Promises must be constructed via new');
+//     }
+//     if (typeof fn !== 'function') {
+//         throw new TypeError('Promise constructor\'s argument is not a function');
+//     }
+//     this._deferredState = 0;
+//     this._state = 0;
+//     this._value = null;
+//     this._deferreds = null;
+//     if (fn === noop) return;
+//     // doResolve(fn, this);
+// }
+// Promise._onHandle = null;
+// Promise._onReject = null;
+// Promise._noop = noop;
+// Promise.prototype.then = function(onFulfilled, onRejected) {
+//     debugger
+//     if (this.constructor !== Promise) {
+//         return safeThen(this, onFulfilled, onRejected);
+//     }
+//     var res = new Promise(noop);
+//     return res;
+// };
+// function safeThen(self, onFulfilled, onRejected) {
+//     return new self.constructor(function(resolve, reject) {
+//         // debugger
+//         var res = new Promise(noop);
+//         res.then(resolve, reject);
+//     });
+// }
+
+
 </script>
 </body>
 
