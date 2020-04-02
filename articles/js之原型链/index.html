@@ -151,24 +151,25 @@
 
     // console.log(Object.isPrototypeOf(obj)); //隐式原型，都具有可扩展属性原则
     // console.log(Fn.prototype); //显示原型
-    function A() {}
+    // function A() {}
 
-    function B() {}
+    // function B() {}
 
-    function C() {}
+    // function C() {}
 
-    B.prototype = new A()
-    C.prototype = new B()
+    // B.prototype = new A()
+    // C.prototype = new B()
 
-    const c = new C()
+    // const c = new C()
 
-    console.log(
-        c.__proto__ === C.prototype,
-        C.prototype.__proto__ === B.prototype,
-        B.prototype.__proto__ === A.prototype,
-        A.prototype.__proto__ === Object.prototype,
-        Object.prototype.__proto__ === null
-    )
+    // console.log(
+    //     c.__proto__ === C.prototype,
+    //     C.prototype.__proto__ === B.prototype,
+    //     B.prototype.__proto__ === A.prototype,
+    //     A.prototype.__proto__ === Object.prototype,
+    //     Object.prototype.__proto__ === null
+    // )
+    // 实例中为什么不能修改原型基础类型的值？
     </script>
 </body>
 
